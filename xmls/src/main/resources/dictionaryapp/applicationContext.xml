@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			               http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dictionaryLookupService"
+	      class="org.coderearth.springrecipes.dictionaryapp.services.DictionaryLookupServiceImpl">
+		<constructor-arg type="org.coderearth.springrecipes.dictionaryapp.dao.DictionaryDao" ref="dictionaryDao"/>
+	</bean>
+
+	<bean id="dictionaryDao" class="org.coderearth.springrecipes.dictionaryapp.dao.DictionaryDaoImpl">
+		<constructor-arg type="org.coderearth.springrecipes.dictionaryapp.model.Dictionary" ref="dictionary"/>
+	</bean>
+
+	<bean id="dictionary" class="org.coderearth.springrecipes.dictionaryapp.model.Dictionary"
+	      factory-bean="dictionaryBuilder" factory-method="build"/>
+
+	<bean id="dictionaryBuilder"
+	      class="org.coderearth.springrecipes.dictionaryapp.dao.builder.InMemoryDictionaryBuilderImpl"/>
+
+</beans>
