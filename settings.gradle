@@ -1,4 +1,0 @@
-rootProject.name = 'spring-recipes'
-include 'xmls'
-include 'annotations'
-
