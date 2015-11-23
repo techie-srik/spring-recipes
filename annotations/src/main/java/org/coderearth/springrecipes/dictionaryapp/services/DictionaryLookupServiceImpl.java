@@ -1,6 +1,7 @@
 package org.coderearth.springrecipes.dictionaryapp.services;
 
 import org.coderearth.springrecipes.dictionaryapp.dao.DictionaryDao;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import java.util.Set;
  */
 public class DictionaryLookupServiceImpl implements DictionaryLookupService {
 
+    @Autowired
     private DictionaryDao dictionaryDao;
 
     public DictionaryLookupServiceImpl(DictionaryDao dictionaryDao) {

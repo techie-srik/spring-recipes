@@ -1,12 +1,14 @@
 package org.coderearth.springrecipes.dictionaryapp.dao;
 
 import org.coderearth.springrecipes.dictionaryapp.model.Dictionary;
+import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
 /**
  * Created by kunal_patel on 22/11/15.
  */
+@Repository
 public class DictionaryDaoImpl implements DictionaryDao {
 
 	private Dictionary dictionary;
@@ -16,6 +18,10 @@ public class DictionaryDaoImpl implements DictionaryDao {
 	 */
 	public DictionaryDaoImpl() {
 		dictionary = new Dictionary();
+	}
+
+	public void setDictionary(Dictionary dictionary) {
+		this.dictionary = dictionary;
 	}
 
 	/**
