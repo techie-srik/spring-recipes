@@ -1,4 +1,4 @@
-package dictionaryapp.dao;
+package org.coderearth.springrecipes.dictionaryapp.dao;
 
 import java.util.Set;
 

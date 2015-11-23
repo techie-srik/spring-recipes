@@ -1,4 +1,4 @@
-package dictionaryapp.model;
+package org.coderearth.springrecipes.dictionaryapp.model;
 
 
 import com.google.common.base.MoreObjects;

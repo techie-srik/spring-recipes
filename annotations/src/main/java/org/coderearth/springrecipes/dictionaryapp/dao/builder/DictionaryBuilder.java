@@ -1,4 +1,4 @@
-package dictionaryapp.dao.builder;
+package org.coderearth.springrecipes.dictionaryapp.dao.builder;
 
 import org.coderearth.springrecipes.dictionaryapp.model.Dictionary;
 
