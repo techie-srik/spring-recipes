@@ -28,19 +28,19 @@ public class DictionaryAppTest {
 
 	@Before
 	public void setUp() throws Exception {
-		logger.info("Setting up " + getClass().getSimpleName());
-		logger.info("Setup is done " + getClass().getSimpleName());
+		logger.debug("Setting up " + getClass().getSimpleName());
+		logger.debug("Setup is done " + getClass().getSimpleName());
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		logger.info("Destroying " + getClass().getSimpleName());
-		logger.info("Destroyed " + getClass().getSimpleName());
+		logger.debug("Destroying " + getClass().getSimpleName());
+		logger.debug("Destroyed " + getClass().getSimpleName());
 	}
 
 	@Test
 	public void testDictionaryApp() {
-		logger.info("Inside testDictionaryApp()");
+		logger.debug("Inside testDictionaryApp()");
 		assertNotNull(dictionaryApp);
 		assertTrue(dictionaryApp.isDictionaryReadyForLookup());
 		assertEquals(dictionaryApp.lookup("hello"), Sets.newHashSet("hi"));
