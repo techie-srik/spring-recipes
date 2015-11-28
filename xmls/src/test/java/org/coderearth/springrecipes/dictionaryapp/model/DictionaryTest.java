@@ -1,9 +1,12 @@
-package org.coderearth.springrecipes.dictionary.model;
+package org.coderearth.springrecipes.dictionaryapp.model;
 
+import com.google.common.collect.Sets;
 import org.coderearth.springrecipes.dictionaryapp.model.Dictionary;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Created by kunal_patel on 15/11/15.
@@ -25,24 +28,24 @@ public class DictionaryTest {
 	@Test
 	public void testAddWord() throws Exception {
 		dict.addWord("hello", "hi");
-		System.out.println(dict);
+		assertEquals(Sets.newHashSet("hi"), dict.lookup("hello"));
 		dict.addWord("hello", "hi2");
+		assertEquals(Sets.newHashSet("hi", "hi2"), dict.lookup("hello"));
 		dict.addWord("computer", "laptop");
-		System.out.println(dict);
+		assertEquals(Sets.newHashSet("laptop"), dict.lookup("computer"));
 	}
 
 	@Test
 	public void testLookup() throws Exception {
 		dict.addWord("hello", "hi");
-		System.out.println(dict.lookup("hello"));
-		System.out.println(dict.lookup("hi"));
+		assertEquals(Sets.newHashSet("hi"), dict.lookup("hello"));
+		assertNull(dict.lookup("null"));
 	}
 
 	@Test
 	public void testContains() {
 		dict.addWord("hello", "hi");
-		System.out.println(dict);
-		System.out.println(dict.contains("hello"));
-		System.out.println(dict.contains("hello2"));
+		assertTrue(dict.contains("hello"));
+		assertFalse(dict.contains("hello2"));
 	}
 }
