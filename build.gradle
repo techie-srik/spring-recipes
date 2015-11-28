@@ -21,4 +21,12 @@ allprojects {
     }
 
     test.testLogging.showStandardStreams = true;
+
+    clean {
+		delete "log/"
+		delete "tmp/"
+		delete "build/"
+		delete "target/"
+		delete "bin/"
+    }
 }
