@@ -7,10 +7,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import javax.swing.*;
+
 
 import static org.junit.Assert.*;
 
@@ -18,11 +20,14 @@ import static org.junit.Assert.*;
  * Created by kunal_patel on 28/11/15.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:dictionaryapp/applicationContext.xml"})
+@ContextConfiguration(loader= AnnotationConfigContextLoader.class )
+
 public class DictionaryAppTest {
 
 	private final Logger logger = Logger.getLogger(getClass());
-
+	
+	
+	
 	@Autowired
 	private DictionaryApp dictionaryApp;
 
